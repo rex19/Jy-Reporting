@@ -6,7 +6,6 @@ import axios from 'axios';
 import { PublicParam } from '../utils/config.js';
 import mockJson from '../mock/mock.json';
 const mockData = mockJson.mockData;
-
 const line1Url = PublicParam.line1Url
 
 export default class Line1 extends Component {
@@ -49,7 +48,6 @@ export default class Line1 extends Component {
         let obj = this
         axios.get(line1Url).then(function (response) {
             console.log('response', response);
-            // if()
             obj.setState({
                 WorkOrderCode: response.data.WorkOrderCode,
                 PartTypeCode: response.data.PartTypeCode,
@@ -85,10 +83,6 @@ export default class Line1 extends Component {
         });
 
         this.interval = setInterval(() => this.AjaxReportingData(), 5000);
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval);
     }
 
     AjaxReportingData() {
@@ -130,6 +124,11 @@ export default class Line1 extends Component {
                     IntervalHour: mockData.IntervalHour
                 })
             });
+    }
+
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     render() {

@@ -4,73 +4,41 @@ import HeaderComponent from './header/index';
 import FooterComponent from './footer/index';
 import axios from 'axios';
 import { PublicParam } from '../utils/config.js';
-
+import mockJson from '../mock/mock.json';
+const mockData = mockJson.mockData;
 const line2Url = PublicParam.line2Url
 
 export default class Line2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            WorkOrderCode: "20170922",
-            PartTypeCode: "1-6档",
-            WorkOrderPlannedQuantity: 30,
-            WorkOrderFinishedQuantity: 19,
-            resultTargetOEE: "150",
-            resultPerQualified: "1",
-            resultPlanCycleTime: "120",
-            resultActCycleTime: "110",
-            resultPerCycleTime: "95",
-            resultPerPlanComplete: "115",
+            WorkOrderCode: "",
+            PartTypeCode: "",
+            WorkOrderPlannedQuantity: 0,
+            WorkOrderFinishedQuantity: 0,
+            resultTargetOEE: "0",
+            resultPerQualified: "0",
+            resultPlanCycleTime: "0",
+            resultActCycleTime: "0",
+            resultPerCycleTime: "0",
+            resultPerPlanComplete: "0",
             PlannedQuantity: [
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25,
-                12.25
+                0,
+                0,
+                0,
+                0,
             ],
             FinishedQuantity: [
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2
+                0,
+                0,
+                0,
+                0,
             ],
             IntervalHour: [
-                "2017/09/21 04:00:00",
-                "2017/09/21 05:00:00",
-                "2017/09/21 06:00:00",
-                "2017/09/21 07:00:00",
-                "2017/09/21 08:00:00",
-                "2017/09/21 09:00:00",
-                "2017/09/21 10:00:00",
-                "2017/09/21 11:00:00",
-                "2017/09/21 12:00:00",
-                "2017/09/21 13:00:00",
-                "2017/09/21 14:00:00",
-                "2017/09/21 15:00:00",
-                "2017/09/21 16:00:00",
-                "2017/09/21 17:00:00",
-                "2017/09/21 18:00:00"
+                '0',
+                '0',
+                '0',
+                '0',
             ]
         }
     }
@@ -98,13 +66,24 @@ export default class Line2 extends Component {
             })
             .catch(function (err) {
                 console.log(err);
+                obj.setState({
+                    WorkOrderCode: mockData.WorkOrderCode,
+                    PartTypeCode: mockData.PartTypeCode,
+                    WorkOrderPlannedQuantity: mockData.WorkOrderPlannedQuantity,
+                    WorkOrderFinishedQuantity: mockData.WorkOrderFinishedQuantity,
+                    resultTargetOEE: mockData.resultTargetOEE,
+                    resultPerQualified: mockData.resultPerQualified,
+                    resultPlanCycleTime: mockData.resultPlanCycleTime,
+                    resultActCycleTime: mockData.resultActCycleTime,
+                    resultPerCycleTime: mockData.resultPerCycleTime,
+                    resultPerPlanComplete: mockData.resultPerPlanComplete,
+                    PlannedQuantity: mockData.PlannedQuantity,
+                    FinishedQuantity: mockData.FinishedQuantity,
+                    IntervalHour: mockData.IntervalHour
+                })
             });
 
         this.interval = setInterval(() => this.AjaxReportingData(), 5000);
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval);
     }
 
     AjaxReportingData() {
@@ -130,7 +109,26 @@ export default class Line2 extends Component {
             })
             .catch(function (err) {
                 console.log(err);
+                obj.setState({
+                    WorkOrderCode: mockData.WorkOrderCode,
+                    PartTypeCode: mockData.PartTypeCode,
+                    WorkOrderPlannedQuantity: mockData.WorkOrderPlannedQuantity,
+                    WorkOrderFinishedQuantity: mockData.WorkOrderFinishedQuantity,
+                    resultTargetOEE: mockData.resultTargetOEE,
+                    resultPerQualified: mockData.resultPerQualified,
+                    resultPlanCycleTime: mockData.resultPlanCycleTime,
+                    resultActCycleTime: mockData.resultActCycleTime,
+                    resultPerCycleTime: mockData.resultPerCycleTime,
+                    resultPerPlanComplete: mockData.resultPerPlanComplete,
+                    PlannedQuantity: mockData.PlannedQuantity,
+                    FinishedQuantity: mockData.FinishedQuantity,
+                    IntervalHour: mockData.IntervalHour
+                })
             });
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     render() {
