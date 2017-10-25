@@ -11,7 +11,7 @@ const FooterComponent = (props) => (
       <Grid.Row columns={4} >
         <Grid.Column>
           <div className='FooterChartsDiv'>
-            <DialChart title='OEE' data={props.resultTargetOEE} punctuation='%' />
+            <DialChart title='开动率' data={props.resultTargetOEE} punctuation='%' />
           </div>
         </Grid.Column>
         <Grid.Column>
