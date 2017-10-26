@@ -1,18 +1,6 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-
-// let style = {
-//     splitNumber: 0,     //刻度数量
-//     min: 0,
-//     max: 30,
-//     startAngle: 225,
-//     endAngle: 144,
-//     color: [
-//         [1, '#FF0000']
-//     ]
-// }
-
 export default class CycletimeDialChart extends React.Component {
     constructor() {
         super();
@@ -75,67 +63,79 @@ export default class CycletimeDialChart extends React.Component {
         }
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (this.props.data <= 30) {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 3,     //刻度数量
-    //                 min: 0,
-    //                 max: 30,
-    //                 startAngle: 225,
-    //                 endAngle: 144,
-    //                 color: [
-    //                     [1, '#FF0000']
-    //                 ]
-    //             }
-    //         })
+    componentWillReceiveProps(prevProps, prevState) {
+        console.log('componentWillReceiveProps', prevProps, prevState)
+        if (prevProps.resultPerCycleTime <= 30) {
+            this.setState({
+                style: {
+                    splitNumber: 3,     //刻度数量
+                    min: 0,
+                    max: 30,
+                    startAngle: 225,
+                    endAngle: 144,
+                    color: [
+                        [1, '#FF0000']
+                    ]
+                }
+            })
 
-    //     } else if (this.props.data >= 90) {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 1,     //刻度数量
-    //                 min: 90,
-    //                 max: 100,
-    //                 startAngle: -18,
-    //                 endAngle: -45,
-    //                 color: [
-    //                     [1, '#60b044']
-    //                 ]
-    //             }
-    //         })
-    //     } else {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 6,     //刻度数量
-    //                 min: 30,
-    //                 max: 90,
-    //                 startAngle: 144,
-    //                 endAngle: -18,
-    //                 color: [
-    //                     [1, '#ffce00']
-    //                 ]
-    //             }
-    //         })
-    //     }
-    // }
+        } else if (prevProps.resultPerCycleTime >= 90) {
+            this.setState({
+                style: {
+                    splitNumber: 1,     //刻度数量
+                    min: 90,
+                    max: 100,
+                    startAngle: -18,
+                    endAngle: -45,
+                    color: [
+                        [1, '#60b044']
+                    ]
+                }
+            })
+        } else if (prevProps.resultPerCycleTime >= 100) {
+            this.setState({
+                style: {
+                    splitNumber: 1,     //刻度数量
+                    min: 90,
+                    max: 100,
+                    startAngle: -18,
+                    endAngle: -45,
+                    color: [
+                        [1, '#60b044']
+                    ]
+                }
+            })
+        } else {
+            this.setState({
+                style: {
+                    splitNumber: 6,     //刻度数量
+                    min: 30,
+                    max: 90,
+                    startAngle: 144,
+                    endAngle: -18,
+                    color: [
+                        [1, '#ffce00']
+                    ]
+                }
+            })
+        }
+    }
 
 
     render() {
-        console.log('render', this.state.style)
-
         const option = {
             // backgroundColor: 'rgba(36,39,62,.2)',
             title: {
                 x: "center",
                 bottom: 30,
-                text:this.props.resultActCycleTime+'s/'+this.props.resultPlanCycleTime+'s',
+                text: this.props.resultActCycleTime + 's/' + this.props.resultPlanCycleTime + 's',
                 textStyle: {
-                    top:10,
+                    top: 10,
                     color: 'white',
                     fontSize: 17
                 },
                 subtext: this.props.title,
-                subtextStyle:{
+                subtextStyle: {
                     color: 'white',
                     fontSize: 27
                 },
@@ -260,7 +260,7 @@ export default class CycletimeDialChart extends React.Component {
                         formatter: '{value}' + this.props.punctuation
                     },
                     data: [{
-                        name:'',
+                        name: '',
                         value: this.props.resultPerCycleTime,
                     }]
                 }]

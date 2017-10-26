@@ -1,18 +1,6 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-
-// let style = {
-//     splitNumber: 0,     //刻度数量
-//     min: 0,
-//     max: 30,
-//     startAngle: 225,
-//     endAngle: 144,
-//     color: [
-//         [1, '#FF0000']
-//     ]
-// }
-
 export default class DialChart extends React.Component {
     constructor() {
         super();
@@ -75,62 +63,63 @@ export default class DialChart extends React.Component {
         }
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (this.props.data <= 30) {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 3,     //刻度数量
-    //                 min: 0,
-    //                 max: 30,
-    //                 startAngle: 225,
-    //                 endAngle: 144,
-    //                 color: [
-    //                     [1, '#FF0000']
-    //                 ]
-    //             }
-    //         })
+    componentWillReceiveProps(prevProps, prevState) {
+        console.log('componentWillReceiveProps',prevProps, prevState)
+        if (prevProps.data <= 30) {
+            this.setState({
+                style: {
+                    splitNumber: 3,     //刻度数量
+                    min: 0,
+                    max: 30,
+                    startAngle: 225,
+                    endAngle: 144,
+                    color: [
+                        [1, '#FF0000']
+                    ]
+                }
+            })
 
-    //     } else if (this.props.data >= 90) {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 1,     //刻度数量
-    //                 min: 90,
-    //                 max: 100,
-    //                 startAngle: -18,
-    //                 endAngle: -45,
-    //                 color: [
-    //                     [1, '#60b044']
-    //                 ]
-    //             }
-    //         })
-    //     } else if (this.props.data >= 100) {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 1,     //刻度数量
-    //                 min: 90,
-    //                 max: 100,
-    //                 startAngle: -18,
-    //                 endAngle: -45,
-    //                 color: [
-    //                     [1, '#60b044']
-    //                 ]
-    //             }
-    //         })
-    //     } else {
-    //         this.setState({
-    //             style: {
-    //                 splitNumber: 6,     //刻度数量
-    //                 min: 30,
-    //                 max: 90,
-    //                 startAngle: 144,
-    //                 endAngle: -18,
-    //                 color: [
-    //                     [1, '#ffce00']
-    //                 ]
-    //             }
-    //         })
-    //     }
-    // }
+        } else if (prevProps.data >= 90) {
+            this.setState({
+                style: {
+                    splitNumber: 1,     //刻度数量
+                    min: 90,
+                    max: 100,
+                    startAngle: -18,
+                    endAngle: -45,
+                    color: [
+                        [1, '#60b044']
+                    ]
+                }
+            })
+        } else if (prevProps.data >= 100) {
+            this.setState({
+                style: {
+                    splitNumber: 1,     //刻度数量
+                    min: 90,
+                    max: 100,
+                    startAngle: -18,
+                    endAngle: -45,
+                    color: [
+                        [1, '#60b044']
+                    ]
+                }
+            })
+        } else {
+            this.setState({
+                style: {
+                    splitNumber: 6,     //刻度数量
+                    min: 30,
+                    max: 90,
+                    startAngle: 144,
+                    endAngle: -18,
+                    color: [
+                        [1, '#ffce00']
+                    ]
+                }
+            })
+        }
+    }
 
 
     render() {

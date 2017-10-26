@@ -87,12 +87,13 @@ const BarChart = (props) => (
                     type: 'bar',
                     itemStyle: {
                         normal: {
-                            color: '#336699'
+                            color: 'rgba(51,102,153,.8)'
                         },
                     },
                     label: {
                         normal: {
                             show: true,
+                            color:'white',
                             position: 'inside'
                         }
                     },
@@ -104,12 +105,13 @@ const BarChart = (props) => (
                     type: 'bar',
                     itemStyle: {
                         normal: {
-                            color: '#00CC33'
+                            color: 'rgba(0,204,51,.8)'
                         },
                     },
                     label: {
                         normal: {
                             show: true,
+                            color:'blue',
                             position: 'inside'
                         }
                     },
