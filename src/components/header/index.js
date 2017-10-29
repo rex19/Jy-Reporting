@@ -9,9 +9,8 @@ const HeaderComponent = (props) => (
       <Grid.Row >
         <Grid.Column width={16}>
           <div className='HeaderTitleDiv'>
-            <h1 style={{ color: 'white' }}>上海交运汽车动力系统有限公司</h1>
-            <a style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>GFX装配线</a>
-            <img src={SFILogo} alt='您的浏览器需要升级，谢谢' className='HeaderLogoImg' style={{ width: '15%', height: '50%' }} /> 
+            <h1 style={{ color: 'white' }}>上海**系统有限公司</h1>
+            <a style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>**装配线</a>
           </div>
         </Grid.Column>
       </Grid.Row>
@@ -49,7 +48,7 @@ const HeaderComponent = (props) => (
         color='teal'
         content={props.lineName}
         icon='hourglass start'
-        // label={{ basic: false, color: 'teal', pointing: 'left', content: '线体'}}
+      // label={{ basic: false, color: 'teal', pointing: 'left', content: '线体'}}
       />
     </div>
   </div>

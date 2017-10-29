@@ -8,6 +8,9 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 <!-- 演示地址 <> -->
+## Demo截图
+
+![](src/img/demo.png)
 
 ## 特性
 
@@ -98,3 +101,4 @@ npm run build
     ```bash
       ....
     ```
+
