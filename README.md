@@ -98,7 +98,7 @@ npm run build
 
 ## FAQ
 
-    ```bash
-      ....
-    ```
+  ```bash
+    ....
+  ```
 
