@@ -3,7 +3,6 @@
 [![React](https://img.shields.io/badge/react-^15.6.1-brightgreen.svg?style=flat-square)](https://github.com/facebook/react)
 [![Semantic%20UI%20React](https://img.shields.io/badge/semantic%20UI%20React-^2.11.2-yellowgreen.svg?style=flat-square)](https://github.com/Semantic-Org/Semantic-UI-React)
 [![echarts%20for%20react](https://img.shields.io/badge/echarts%20for%20react-^1.4.4-orange.svg?style=flat-square)](https://github.com/hustcc/echarts-for-react)
-
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
